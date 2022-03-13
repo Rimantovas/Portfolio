@@ -1,4 +1,4 @@
-import { Box, Button, Flex, HStack } from '@chakra-ui/react'
+import { Box, Button, Flex, HStack, IconButton } from '@chakra-ui/react'
 import React from 'react'
 import ThemeText from './Typography/ThemeText'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
@@ -162,21 +162,48 @@ const Banner = () => {
             href="https://github.com/Rimantovas"
             rel="noreferrer"
           >
-            <BsGithub size="50px" color={primaryDarkColor} />
+            <IconButton
+              borderRadius="15px"
+              bgColor="transparent"
+              w="60px"
+              h="60px"
+              fontSize="40px"
+              _hover={{ bgColor: secondaryLightColor }}
+              aria-label="facebook"
+              icon={<BsGithub color={primaryDarkColor} />}
+            />
           </a>
           <a
             target="_blank"
             href="https://www.linkedin.com/in/rimas-povilaitis"
             rel="noreferrer"
           >
-            <BsLinkedin size="50px" color={primaryDarkColor} />
+            <IconButton
+              borderRadius="15px"
+              bgColor="transparent"
+              w="60px"
+              h="60px"
+              fontSize="40px"
+              _hover={{ bgColor: secondaryLightColor }}
+              aria-label="facebook"
+              icon={<BsLinkedin color={primaryDarkColor} />}
+            />
           </a>
           <a
             target="_blank"
             href="https://www.facebook.com/rimas.povilaitis.7"
             rel="noreferrer"
           >
-            <SiFacebook size="50px" color={primaryDarkColor} />
+            <IconButton
+              borderRadius="15px"
+              bgColor="transparent"
+              w="60px"
+              h="60px"
+              fontSize="40px"
+              _hover={{ bgColor: secondaryLightColor }}
+              aria-label="facebook"
+              icon={<SiFacebook color={primaryDarkColor} />}
+            />
           </a>
         </HStack>
         <Flex w="80%" p={5} justify="center">

@@ -30,7 +30,7 @@ const ProjectCard = ({
   return (
     <Flex
       w={{ base: '45%', sm: '45%', md: '100%', lg: '100%' }}
-      h="25vh"
+      h="30vh"
       m={4}
       maxWidth="600px"
       borderRadius="15px"
@@ -77,7 +77,7 @@ const ProjectCard = ({
             style={{ noOfLines: 3, color: primaryLightColor }}
             text={description}
           />
-          <HStack mt={5} spacing={5}>
+          <HStack mt={5} spacing={2}>
             <a
               target="_blank"
               href={siteUrl ?? undefined}

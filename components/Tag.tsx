@@ -1,3 +1,4 @@
+import { IconButton } from '@chakra-ui/react'
 import React from 'react'
 import {
   SiFlutter,
@@ -7,7 +8,11 @@ import {
   SiReact,
   SiGooglecloud,
 } from 'react-icons/si'
-import { primaryLightColor } from '../theme'
+import {
+  primaryDarkColor,
+  primaryLightColor,
+  secondaryLightColor,
+} from '../theme'
 
 interface Props {
   tag: string
@@ -18,19 +23,103 @@ const Tag = ({ tag }: Props) => {
 
   switch (tag) {
     case 'flutter':
-      return <SiFlutter size={30} style={style} />
+      return (
+        <IconButton
+          borderRadius="15px"
+          bgColor="transparent"
+          w="45px"
+          h="45px"
+          m={0}
+          fontSize="30px"
+          _hover={{ bgColor: secondaryLightColor }}
+          aria-label="facebook"
+          icon={<SiFlutter style={style} />}
+        />
+      )
     case 'firebase':
-      return <SiFirebase size={30} style={style} />
+      return (
+        <IconButton
+          borderRadius="15px"
+          bgColor="transparent"
+          w="45px"
+          h="45px"
+          m={0}
+          fontSize="30px"
+          _hover={{ bgColor: secondaryLightColor }}
+          aria-label="facebook"
+          icon={<SiFirebase style={style} />}
+        />
+      )
     case 'chakra':
-      return <SiChakraui size={30} style={style} />
+      return (
+        <IconButton
+          borderRadius="15px"
+          bgColor="transparent"
+          w="45px"
+          h="45px"
+          m={0}
+          fontSize="30px"
+          _hover={{ bgColor: secondaryLightColor }}
+          aria-label="facebook"
+          icon={<SiChakraui style={style} />}
+        />
+      )
     case 'next':
-      return <SiNextdotjs size={30} style={style} />
+      return (
+        <IconButton
+          borderRadius="15px"
+          bgColor="transparent"
+          w="45px"
+          h="45px"
+          m={0}
+          fontSize="30px"
+          _hover={{ bgColor: secondaryLightColor }}
+          aria-label="facebook"
+          icon={<SiNextdotjs style={style} />}
+        />
+      )
     case 'react':
-      return <SiReact size={30} style={style} />
+      return (
+        <IconButton
+          borderRadius="15px"
+          bgColor="transparent"
+          w="45px"
+          h="45px"
+          m={0}
+          fontSize="30px"
+          _hover={{ bgColor: secondaryLightColor }}
+          aria-label="facebook"
+          icon={<SiReact style={style} />}
+        />
+      )
     case 'cloud':
-      return <SiGooglecloud size={30} style={style} />
+      return (
+        <IconButton
+          borderRadius="15px"
+          bgColor="transparent"
+          w="45px"
+          h="45px"
+          m={0}
+          fontSize="30px"
+          _hover={{ bgColor: secondaryLightColor }}
+          aria-label="facebook"
+          icon={<SiGooglecloud style={style} />}
+        />
+      )
     default:
-      return <SiFlutter />
+      return (
+        <IconButton
+          borderRadius="15px"
+          bgColor="transparent"
+          w="45px"
+          h="45px"
+          m={0}
+          fontSize="30px"
+          _hover={{ bgColor: secondaryLightColor }}
+          aria-label="facebook"
+          icon={<SiFlutter style={style} />}
+        />
+      )
   }
 }
 

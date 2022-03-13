@@ -14,7 +14,9 @@ const Contact = () => {
       p={5}
       alignItems="center"
       alignSelf="center"
-    ></Flex>
+    >
+      <Flex flexDir="column"></Flex>
+    </Flex>
   )
 }
 

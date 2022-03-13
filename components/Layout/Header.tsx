@@ -10,7 +10,20 @@ import {
 } from '../../theme'
 
 const Header = () => {
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState<string>('')
+
+  window.onscroll = () => {
+    var current: string | null = ''
+    const sections = document.getElementsByClassName('section')
+    console.log(`=== ${sections.length}`)
+    Array.prototype.forEach.call(sections, function (section) {
+      const sectionTop = section.offsetTop - 80
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute('id')
+      }
+    })
+    setPage(current ?? '')
+  }
 
   return (
     <Flex
@@ -23,17 +36,18 @@ const Header = () => {
       zIndex="10"
     >
       <HStack spacing={50} justifyContent="center">
-        <a onClick={() => setPage(0)} href="#HomeSection">
+        <a href="#HomeSection">
           <Flex flexDir="column" alignItems="center">
             <ThemeText
               type="h2"
               text="Home"
               style={{
-                fontSize: page === 0 ? '28px' : '24px',
-                color: page === 0 ? primaryColor : secondaryDarkColor,
+                fontSize: page === 'HomeSection' ? '28px' : '24px',
+                color:
+                  page === 'HomeSection' ? primaryColor : secondaryDarkColor,
               }}
             />
-            {page === 0 && (
+            {page === 'HomeSection' && (
               <Circle
                 justifyContent="center"
                 size="8px"
@@ -42,17 +56,18 @@ const Header = () => {
             )}
           </Flex>
         </a>
-        <a onClick={() => setPage(1)} href="#AboutSection">
+        <a href="#AboutSection">
           <Flex flexDir="column" alignItems="center">
             <ThemeText
               type="h2"
               text="About"
               style={{
-                fontSize: page === 1 ? '28px' : '24px',
-                color: page === 1 ? primaryColor : secondaryDarkColor,
+                fontSize: page === 'AboutSection' ? '28px' : '24px',
+                color:
+                  page === 'AboutSection' ? primaryColor : secondaryDarkColor,
               }}
             />
-            {page === 1 && (
+            {page === 'AboutSection' && (
               <Circle
                 justifyContent="center"
                 size="8px"
@@ -62,17 +77,20 @@ const Header = () => {
           </Flex>
         </a>
 
-        <a onClick={() => setPage(2)} href="#ProjectsSection">
+        <a href="#ProjectsSection">
           <Flex flexDir="column" alignItems="center">
             <ThemeText
               type="h2"
               text="Projects"
               style={{
-                fontSize: page === 2 ? '28px' : '24px',
-                color: page === 2 ? primaryColor : secondaryDarkColor,
+                fontSize: page === 'ProjectsSection' ? '28px' : '24px',
+                color:
+                  page === 'ProjectsSection'
+                    ? primaryColor
+                    : secondaryDarkColor,
               }}
             />
-            {page === 2 && (
+            {page === 'ProjectsSection' && (
               <Circle
                 justifyContent="center"
                 size="8px"
@@ -81,17 +99,18 @@ const Header = () => {
             )}
           </Flex>
         </a>
-        <a onClick={() => setPage(3)} href="#ContactSection">
+        <a href="#ContactSection">
           <Flex flexDir="column" alignItems="center">
             <ThemeText
               type="h2"
               text="Contact me"
               style={{
-                fontSize: page === 3 ? '28px' : '24px',
-                color: page === 3 ? primaryColor : secondaryDarkColor,
+                fontSize: page === 'ContactSection' ? '28px' : '24px',
+                color:
+                  page === 'ContactSection' ? primaryColor : secondaryDarkColor,
               }}
             />
-            {page === 3 && (
+            {page === 'ContactSection' && (
               <Circle
                 justifyContent="center"
                 size="8px"
