@@ -1,15 +1,15 @@
 import { Flex } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
+import { bgGradient } from '../../theme'
 import Header from './Header'
 
 interface Props {
-  selectedTab: number
   children: ReactNode
 }
 
-const Layout = ({ selectedTab, children }: Props) => {
+const Layout = ({ children }: Props) => {
   return (
-    <Flex flexDir="column" minH="100vh">
+    <Flex flexDir="column" minH="100vh" background={bgGradient}>
       <Header />
       <Flex flex={1} flexDir="column" justifyContent="center">
         {children}{' '}

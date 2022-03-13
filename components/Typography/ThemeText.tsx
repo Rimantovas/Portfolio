@@ -4,12 +4,13 @@ interface Props {
   type: string
   text: string
   isGlitch?: boolean
+  maxLines?: number
   style?: TextProps
 }
 import '@fontsource/nunito'
 import GlitchText from '../GlitchText'
 
-const ThemeText = ({ type, text, style, isGlitch }: Props) => {
+const ThemeText = ({ type, text, style, isGlitch, maxLines }: Props) => {
   switch (type) {
     case 'h1':
       return (

@@ -10,39 +10,9 @@ import {
   secondaryLightColor,
 } from '../theme'
 import Particles from 'react-tsparticles'
+import { PolygonMaskType } from 'tsparticles'
 
 const Banner = () => {
-  const options = {
-    preset: 'links',
-    background: {
-      color: 'none',
-    },
-    interactivity: {
-      events: {
-        onHover: {
-          enable: true,
-          mode: 'bubble',
-        },
-      },
-    },
-    particles: {
-      links: {
-        distance: 150,
-        enable: true,
-      },
-      move: {
-        enable: true,
-      },
-      size: {
-        value: 1,
-      },
-      shape: {
-        type: 'circle',
-      },
-    },
-    fullScreen: false,
-    backgroundMode: false,
-  }
   const options2 = {
     background: {
       color: 'none',
@@ -102,13 +72,7 @@ const Banner = () => {
           },
         },
         enable: true,
-        outModes: {
-          default: 'bounce',
-          bottom: 'bounce',
-          left: 'bounce',
-          right: 'bounce',
-          top: 'bounce',
-        },
+        outModes: 'bounce' as const,
         speed: 1,
       },
       number: {
@@ -130,6 +94,7 @@ const Banner = () => {
       size: {
         random: {
           enable: true,
+          minimumValue: 1,
         },
         value: 2,
         animation: {
@@ -151,73 +116,71 @@ const Banner = () => {
       },
       enable: true,
       inline: {
-        arrangement: 'equidistant',
+        arrangement: 'equidistant' as const,
       },
       move: {
         radius: 20,
-        type: 'path',
+        type: 'path' as const,
       },
       scale: 1,
-      type: 'inline',
+      type: 'inline' as PolygonMaskType,
       url: '/smalldeer.svg',
     },
   }
   const initParticles = async (main: any) => {}
   return (
-    <Flex>
-      <Flex
-        className="section"
-        id="HomeSection"
-        maxW="1200px"
-        w="100%"
-        minHeight="100vh"
-        p={5}
-        justify="center"
-        alignItems="center"
-        alignSelf="center"
-      >
-        <Flex w="40%" flexDir="column" justify="start">
-          <Box h="5rem" />
-          <Flex flexDir="column">
-            <ThemeText
-              type="h2"
-              text="Web / app developer"
-              style={{ color: primaryColor }}
-            />
-            <ThemeText isGlitch type="h1" text="Hey, I'm Rimas Povilaitis" />
-            <Box h="3rem" />
-            <ThemeText
-              type="h3"
-              text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-            />
-          </Flex>
-
-          <HStack w="80%" p={5} spacing={10} justify="center">
-            <BsGithub size="50px" color={primaryDarkColor} />
-            <BsLinkedin size="50px" color={primaryDarkColor} />
-            <SiGmail size="50px" color={primaryDarkColor} />
-          </HStack>
-          <Flex w="80%" p={5} justify="center">
-            <Button p={5} w="200px" h="80px">
-              <ThemeText
-                type="h2"
-                text="Let's talk"
-                style={{ color: 'white', fontWeight: 'normal' }}
-              />
-            </Button>
-          </Flex>
-        </Flex>
-        <Flex w="60%" h="60vh" flexDir="row" position="relative">
-          <Particles
-            style={{
-              position: 'relative',
-              height: '100%',
-              width: '100%',
-            }}
-            options={options2}
-            init={initParticles}
+    <Flex
+      className="section"
+      id="HomeSection"
+      maxW="1200px"
+      w="100%"
+      minHeight="100vh"
+      p={5}
+      justifyContent="center"
+      alignItems="center"
+      alignSelf="center"
+    >
+      <Flex w="40%" flexDir="column" justify="start">
+        <Box h="5rem" />
+        <Flex flexDir="column">
+          <ThemeText
+            type="h2"
+            text="Web / app developer"
+            style={{ color: primaryColor }}
+          />
+          <ThemeText isGlitch type="h1" text="Hey, I'm Rimas Povilaitis" />
+          <Box h="3rem" />
+          <ThemeText
+            type="h3"
+            text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
           />
         </Flex>
+
+        <HStack w="80%" p={5} spacing={10} justify="center">
+          <BsGithub size="50px" color={primaryDarkColor} />
+          <BsLinkedin size="50px" color={primaryDarkColor} />
+          <SiGmail size="50px" color={primaryDarkColor} />
+        </HStack>
+        <Flex w="80%" p={5} justify="center">
+          <Button p={5} w="200px" h="80px">
+            <ThemeText
+              type="h2"
+              text="Let's talk"
+              style={{ color: 'white', fontWeight: 'normal' }}
+            />
+          </Button>
+        </Flex>
+      </Flex>
+      <Flex w="60%" h="60vh" flexDir="row" position="relative">
+        <Particles
+          style={{
+            position: 'relative',
+            height: '100%',
+            width: '100%',
+          }}
+          options={options2}
+          init={initParticles}
+        />
       </Flex>
     </Flex>
   )

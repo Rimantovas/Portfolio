@@ -15,7 +15,6 @@ const About = () => {
       w="100%"
       minHeight="100vh"
       p={5}
-      justify="center"
       alignItems="center"
       alignSelf="center"
     >

@@ -12,7 +12,7 @@ const Home: NextPage = () => {
     require('pathseg')
   }
   return (
-    <Layout selectedTab={0}>
+    <Layout>
       <Banner />
       <About />
       <Projects />
