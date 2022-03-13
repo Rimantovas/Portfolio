@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Circle, Flex, HStack, Text, VStack, Button } from '@chakra-ui/react'
 import ThemeText from '../Typography/ThemeText'
@@ -12,18 +12,20 @@ import {
 const Header = () => {
   const [page, setPage] = useState<string>('')
 
-  window.onscroll = () => {
-    var current: string | null = ''
-    const sections = document.getElementsByClassName('section')
-    console.log(`=== ${sections.length}`)
-    Array.prototype.forEach.call(sections, function (section) {
-      const sectionTop = section.offsetTop - 80
-      if (scrollY >= sectionTop) {
-        current = section.getAttribute('id')
-      }
-    })
-    setPage(current ?? '')
-  }
+  useEffect(() => {
+    window.onscroll = () => {
+      var current: string | null = ''
+      const sections = document.getElementsByClassName('section')
+      console.log(`=== ${sections.length}`)
+      Array.prototype.forEach.call(sections, function (section) {
+        const sectionTop = section.offsetTop - 80
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id')
+        }
+      })
+      setPage(current ?? '')
+    }
+  })
 
   return (
     <Flex
