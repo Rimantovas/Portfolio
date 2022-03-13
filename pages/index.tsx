@@ -3,6 +3,7 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import About from '../components/About'
 import Banner from '../components/Banner'
+import Contact from '../components/Contact'
 import Layout from '../components/Layout/Layout'
 import Projects from '../components/Projects'
 import ThemeText from '../components/Typography/ThemeText'
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
       <Banner />
       <About />
       <Projects />
+      <Contact />
     </Layout>
   )
 }

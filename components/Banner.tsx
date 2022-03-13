@@ -2,7 +2,7 @@ import { Box, Button, Flex, HStack } from '@chakra-ui/react'
 import React from 'react'
 import ThemeText from './Typography/ThemeText'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { SiGmail } from 'react-icons/si'
+import { SiFacebook, SiGmail } from 'react-icons/si'
 import {
   primaryColor,
   primaryDarkColor,
@@ -157,18 +157,38 @@ const Banner = () => {
         </Flex>
 
         <HStack w="80%" p={5} spacing={10} justify="center">
-          <BsGithub size="50px" color={primaryDarkColor} />
-          <BsLinkedin size="50px" color={primaryDarkColor} />
-          <SiGmail size="50px" color={primaryDarkColor} />
+          <a
+            target="_blank"
+            href="https://github.com/Rimantovas"
+            rel="noreferrer"
+          >
+            <BsGithub size="50px" color={primaryDarkColor} />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/rimas-povilaitis"
+            rel="noreferrer"
+          >
+            <BsLinkedin size="50px" color={primaryDarkColor} />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.facebook.com/rimas.povilaitis.7"
+            rel="noreferrer"
+          >
+            <SiFacebook size="50px" color={primaryDarkColor} />
+          </a>
         </HStack>
         <Flex w="80%" p={5} justify="center">
-          <Button p={5} w="200px" h="80px">
-            <ThemeText
-              type="h2"
-              text="Let's talk"
-              style={{ color: 'white', fontWeight: 'normal' }}
-            />
-          </Button>
+          <a href="#ContactSection">
+            <Button p={5} w="200px" h="80px">
+              <ThemeText
+                type="h2"
+                text="Let's talk"
+                style={{ color: 'white', fontWeight: 'normal' }}
+              />
+            </Button>
+          </a>
         </Flex>
       </Flex>
       <Flex w="60%" h="60vh" flexDir="row" position="relative">
