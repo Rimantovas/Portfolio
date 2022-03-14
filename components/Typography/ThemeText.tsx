@@ -4,13 +4,14 @@ interface Props {
   type: string
   text: string
   isGlitch?: boolean
-  maxLines?: number
   style?: TextProps
+  _hover?: CSSObject
 }
 import '@fontsource/nunito'
 import GlitchText from '../GlitchText'
+import { CSSObject } from '@emotion/react'
 
-const ThemeText = ({ type, text, style, isGlitch, maxLines }: Props) => {
+const ThemeText = ({ type, text, style, isGlitch, _hover }: Props) => {
   switch (type) {
     case 'h1':
       return (
@@ -23,6 +24,7 @@ const ThemeText = ({ type, text, style, isGlitch, maxLines }: Props) => {
           lineHeight={{ base: '28px', sm: '28px', md: '36px', lg: '80px' }}
           letterSpacing="-0.011em"
           color={'#23262F'}
+          _hover={_hover}
           {...style}
         >
           {isGlitch ? <GlitchText>{text}</GlitchText> : text}
@@ -39,6 +41,7 @@ const ThemeText = ({ type, text, style, isGlitch, maxLines }: Props) => {
           lineHeight="32px"
           letterSpacing="-0.011em"
           color={'#23262F'}
+          _hover={_hover}
           {...style}
         >
           {isGlitch ? <GlitchText>{text}</GlitchText> : text}
@@ -55,6 +58,7 @@ const ThemeText = ({ type, text, style, isGlitch, maxLines }: Props) => {
           lineHeight="25px"
           letterSpacing="-0.011em"
           color={'#23262F'}
+          _hover={_hover}
           {...style}
         >
           {isGlitch ? <GlitchText>{text}</GlitchText> : text}
@@ -70,6 +74,7 @@ const ThemeText = ({ type, text, style, isGlitch, maxLines }: Props) => {
           lineHeight="16px"
           letterSpacing="-0.011em"
           color={'#23262F'}
+          _hover={_hover}
           {...style}
         >
           {isGlitch ? <GlitchText>{text}</GlitchText> : text}
@@ -85,6 +90,7 @@ const ThemeText = ({ type, text, style, isGlitch, maxLines }: Props) => {
           lineHeight="16px"
           letterSpacing="-0.011em"
           color={'#23262F'}
+          _hover={_hover}
           {...style}
         >
           {isGlitch ? <GlitchText>{text}</GlitchText> : text}

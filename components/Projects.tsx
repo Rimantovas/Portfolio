@@ -1,6 +1,6 @@
-import { Flex } from '@chakra-ui/react'
+import { Box, Flex, VStack } from '@chakra-ui/react'
 import React from 'react'
-import { bgGradient } from '../theme'
+import { bgGradient, primaryColor } from '../theme'
 import ProjectCard from './ProjectCard'
 import ThemeText from './Typography/ThemeText'
 import {
@@ -19,12 +19,33 @@ const Projects = () => {
       id="ProjectsSection"
       justifyContent="center"
       alignSelf="center"
+      textAlign="start"
       minH="100vh"
       w="100%"
       maxW="1600px"
       p={5}
       flexDir="column"
     >
+      <VStack
+        spacing={{ base: 2, md: 5 }}
+        textAlign="start"
+        alignItems="center"
+      >
+        <Box>
+          <ThemeText
+            type="h2"
+            text="Projects"
+            style={{ color: primaryColor }}
+          />
+          <ThemeText type="h1" text="My portfolio" />
+        </Box>
+        <ThemeText
+          type=""
+          text="A collection of some of the more interesting projects I have worked on"
+          style={{ fontSize: { base: '19px', md: '24px' } }}
+        />
+      </VStack>
+
       <Flex justifyContent="center" w="100%" wrap="wrap" display="inline-flex">
         <ProjectCard
           imageUrl="/project1.png"

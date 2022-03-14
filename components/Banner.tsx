@@ -1,5 +1,13 @@
-import { Box, Button, Flex, HStack, IconButton } from '@chakra-ui/react'
-import React from 'react'
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  IconButton,
+  ScaleFade,
+  SlideFade,
+} from '@chakra-ui/react'
+import React, { useRef } from 'react'
 import ThemeText from './Typography/ThemeText'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { SiFacebook, SiGmail } from 'react-icons/si'
@@ -11,8 +19,49 @@ import {
 } from '../theme'
 import Particles from 'react-tsparticles'
 import { PolygonMaskType } from 'tsparticles'
+import { useInViewport } from 'react-in-viewport'
+import { Motion } from 'tsparticles/Options/Classes/Motion/Motion'
+import { motion } from 'framer-motion'
 
 const Banner = () => {
+  const ref = useRef(null)
+  const { enterCount, inViewport } = useInViewport(
+    ref,
+    { rootMargin: '0px' },
+    { disconnectOnLeave: false },
+    {}
+  )
+  const options = {
+    preset: 'links',
+    background: {
+      color: 'none',
+    },
+    interactivity: {
+      events: {
+        onHover: {
+          enable: true,
+          mode: 'bubble',
+        },
+      },
+    },
+    particles: {
+      links: {
+        distance: 150,
+        enable: true,
+      },
+      move: {
+        enable: true,
+      },
+      size: {
+        value: 1,
+      },
+      shape: {
+        type: 'circle',
+      },
+    },
+    fullScreen: false,
+    backgroundMode: true,
+  }
   const options2 = {
     background: {
       color: 'none',
@@ -127,7 +176,6 @@ const Banner = () => {
       url: '/smalldeer.svg',
     },
   }
-  const initParticles = async (main: any) => {}
   return (
     <Flex
       className="section"
@@ -137,88 +185,116 @@ const Banner = () => {
       minHeight="100vh"
       p={5}
       justifyContent="center"
-      alignItems="center"
+      alignItems={{ base: 'flex-start', md: 'center' }}
       alignSelf="center"
     >
-      <Flex w="40%" flexDir="column" justify="start">
-        <Box h="5rem" />
-        <Flex flexDir="column">
-          <ThemeText
-            type="h2"
-            text="Web / app developer"
-            style={{ color: primaryColor }}
-          />
-          <ThemeText isGlitch type="h1" text="Hey, I'm Rimas Povilaitis" />
-          <Box h="3rem" />
-          <ThemeText
-            type="h3"
-            text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-          />
-        </Flex>
-
-        <HStack w="80%" p={5} spacing={10} justify="center">
-          <a
-            target="_blank"
-            href="https://github.com/Rimantovas"
-            rel="noreferrer"
-          >
-            <IconButton
-              borderRadius="15px"
-              bgColor="transparent"
-              w="60px"
-              h="60px"
-              fontSize="40px"
-              _hover={{ bgColor: secondaryLightColor }}
-              aria-label="facebook"
-              icon={<BsGithub color={primaryDarkColor} />}
+      <Flex
+        w={{ base: '100%', sm: '100%', md: '40%', lg: '40%' }}
+        flexDir="column"
+        justify="start"
+        ref={ref}
+      >
+        <ScaleFade initialScale={0.5} in={inViewport}>
+          <Box h="5rem" />
+          <Flex flexDir="column">
+            <ThemeText
+              type="h2"
+              text="Web / app developer"
+              style={{ color: primaryColor }}
             />
-          </a>
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/rimas-povilaitis"
-            rel="noreferrer"
-          >
-            <IconButton
-              borderRadius="15px"
-              bgColor="transparent"
-              w="60px"
-              h="60px"
-              fontSize="40px"
-              _hover={{ bgColor: secondaryLightColor }}
-              aria-label="facebook"
-              icon={<BsLinkedin color={primaryDarkColor} />}
-            />
-          </a>
-          <a
-            target="_blank"
-            href="https://www.facebook.com/rimas.povilaitis.7"
-            rel="noreferrer"
-          >
-            <IconButton
-              borderRadius="15px"
-              bgColor="transparent"
-              w="60px"
-              h="60px"
-              fontSize="40px"
-              _hover={{ bgColor: secondaryLightColor }}
-              aria-label="facebook"
-              icon={<SiFacebook color={primaryDarkColor} />}
-            />
-          </a>
-        </HStack>
-        <Flex w="80%" p={5} justify="center">
-          <a href="#ContactSection">
-            <Button p={5} w="200px" h="80px">
+            <motion.div whileHover={{ scale: 1.1 }}>
               <ThemeText
-                type="h2"
-                text="Let's talk"
-                style={{ color: 'white', fontWeight: 'normal' }}
+                type="h1"
+                text="Hey, I'm Rimas Povilaitis"
+                _hover={{
+                  color: primaryColor,
+                  textShadow: `0 0 5px ${primaryColor}, 0 0 10px white`,
+                }}
               />
-            </Button>
-          </a>
-        </Flex>
+            </motion.div>
+            <Box h="3rem" />
+            <ThemeText
+              type="h3"
+              text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            />
+          </Flex>
+
+          <HStack
+            w={{ base: '100%', md: '80%' }}
+            p={5}
+            spacing={10}
+            justify="center"
+          >
+            <a
+              target="_blank"
+              href="https://github.com/Rimantovas"
+              rel="noreferrer"
+            >
+              <IconButton
+                borderRadius="15px"
+                bgColor="transparent"
+                w="60px"
+                h="60px"
+                fontSize="40px"
+                _hover={{ bgColor: secondaryLightColor }}
+                aria-label="facebook"
+                icon={<BsGithub color={primaryDarkColor} />}
+              />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/rimas-povilaitis"
+              rel="noreferrer"
+            >
+              <IconButton
+                borderRadius="15px"
+                bgColor="transparent"
+                w="60px"
+                h="60px"
+                fontSize="40px"
+                _hover={{ bgColor: secondaryLightColor }}
+                aria-label="facebook"
+                icon={<BsLinkedin color={primaryDarkColor} />}
+              />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/rimas.povilaitis.7"
+              rel="noreferrer"
+            >
+              <IconButton
+                borderRadius="15px"
+                bgColor="transparent"
+                w="60px"
+                h="60px"
+                fontSize="40px"
+                _hover={{ bgColor: secondaryLightColor }}
+                aria-label="facebook"
+                icon={<SiFacebook color={primaryDarkColor} />}
+              />
+            </a>
+          </HStack>
+          <Flex w={{ base: '100%', md: '80%' }} p={5} justify="center">
+            <a href="#ContactSection">
+              <Button p={5} w="200px" h="80px">
+                <ThemeText
+                  type="h2"
+                  text="Let's talk"
+                  style={{ color: 'white', fontWeight: 'normal' }}
+                />
+              </Button>
+            </a>
+          </Flex>
+        </ScaleFade>
       </Flex>
-      <Flex w="60%" h="60vh" flexDir="row" position="relative">
+
+      <Flex
+        display={{ base: 'none', sm: 'none', md: 'flex', lg: 'flex' }}
+        w="60%"
+        h="60vh"
+        flexDir="row"
+        position="relative"
+      >
         <Particles
           style={{
             position: 'relative',
@@ -226,7 +302,6 @@ const Banner = () => {
             width: '100%',
           }}
           options={options2}
-          init={initParticles}
         />
       </Flex>
     </Flex>

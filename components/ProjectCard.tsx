@@ -1,4 +1,12 @@
-import { AspectRatio, Box, Button, Flex, HStack, Slide } from '@chakra-ui/react'
+import {
+  AspectRatio,
+  Box,
+  Button,
+  Flex,
+  HStack,
+  ScaleFade,
+  Slide,
+} from '@chakra-ui/react'
 import Image from 'next/image'
 import React, { ReactNode, useState } from 'react'
 import {
@@ -28,10 +36,11 @@ const ProjectCard = ({
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   return (
-    <Flex
-      w={{ base: '45%', sm: '45%', md: '100%', lg: '100%' }}
-      h="30vh"
-      m={4}
+    <AspectRatio
+      w="100%"
+      ratio={3 / 2}
+      display="flex"
+      m={{ base: 1, md: 4 }}
       maxWidth="600px"
       borderRadius="15px"
       overflow="hidden"
@@ -47,18 +56,20 @@ const ProjectCard = ({
       background={`url('${imageUrl}')`}
       backgroundPosition="center"
       alignItems="flex-end"
+      alignContent="flex-end"
     >
       <Slide
         direction="bottom"
         in={isOpen}
         style={{
+          display: 'flex',
           zIndex: 10,
           position: 'relative',
           width: '100%',
-          bottom: '0px',
         }}
       >
         <Box
+          marginTop="auto"
           flexDir="column"
           p={5}
           w="100%"
@@ -66,18 +77,20 @@ const ProjectCard = ({
           borderRadius="15px 15px 0px 0px"
           //   bgColor={secondaryLightColor}
           bgGradient={cardGradient}
+          alignItems="flex-start"
+          textAlign="start"
         >
           <ThemeText
-            type="h1"
+            type="h2"
             text={title}
             style={{ color: primaryLightColor }}
           />
           <ThemeText
-            type="h3"
-            style={{ noOfLines: 3, color: primaryLightColor }}
+            type="p"
+            style={{ noOfLines: 5, color: primaryLightColor }}
             text={description}
           />
-          <HStack mt={5} spacing={2}>
+          <HStack mt={{ base: 1, md: 5 }} spacing={2}>
             <a
               target="_blank"
               href={siteUrl ?? undefined}
@@ -92,7 +105,7 @@ const ProjectCard = ({
           </HStack>
         </Box>
       </Slide>
-    </Flex>
+    </AspectRatio>
   )
 }
 

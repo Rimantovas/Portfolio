@@ -8,6 +8,7 @@ import {
   primaryDarkColor,
   secondaryDarkColor,
 } from '../../theme'
+import MobileDrawer from './MobileDrawer'
 
 const Header = () => {
   const [page, setPage] = useState<string>('')
@@ -31,13 +32,20 @@ const Header = () => {
     <Flex
       bgColor="rgba(155, 167, 214, 0.4)"
       p={5}
-      justifyContent="center"
+      justifyContent={{ base: 'flex-end', md: 'center' }}
       w="100%"
       position="sticky"
       top={0}
       zIndex="10"
     >
-      <HStack spacing={50} justifyContent="center">
+      <Flex display={{ base: 'flex', md: 'none' }}>
+        <MobileDrawer page={page} />
+      </Flex>
+      <HStack
+        display={{ base: 'none', sm: 'none', md: 'flex', lg: 'flex' }}
+        spacing={50}
+        justifyContent="center"
+      >
         <a href="#HomeSection">
           <Flex flexDir="column" alignItems="center">
             <ThemeText

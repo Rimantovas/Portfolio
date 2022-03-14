@@ -30,7 +30,7 @@ const Tag = ({ tag }: Props) => {
           w="45px"
           h="45px"
           m={0}
-          fontSize="30px"
+          fontSize={{ base: '20px', md: '30px' }}
           _hover={{ bgColor: secondaryLightColor }}
           aria-label="facebook"
           icon={<SiFlutter style={style} />}
@@ -44,7 +44,7 @@ const Tag = ({ tag }: Props) => {
           w="45px"
           h="45px"
           m={0}
-          fontSize="30px"
+          fontSize={{ base: '20px', md: '30px' }}
           _hover={{ bgColor: secondaryLightColor }}
           aria-label="facebook"
           icon={<SiFirebase style={style} />}
@@ -58,7 +58,7 @@ const Tag = ({ tag }: Props) => {
           w="45px"
           h="45px"
           m={0}
-          fontSize="30px"
+          fontSize={{ base: '20px', md: '30px' }}
           _hover={{ bgColor: secondaryLightColor }}
           aria-label="facebook"
           icon={<SiChakraui style={style} />}
@@ -72,7 +72,7 @@ const Tag = ({ tag }: Props) => {
           w="45px"
           h="45px"
           m={0}
-          fontSize="30px"
+          fontSize={{ base: '20px', md: '30px' }}
           _hover={{ bgColor: secondaryLightColor }}
           aria-label="facebook"
           icon={<SiNextdotjs style={style} />}
@@ -86,7 +86,7 @@ const Tag = ({ tag }: Props) => {
           w="45px"
           h="45px"
           m={0}
-          fontSize="30px"
+          fontSize={{ base: '20px', md: '30px' }}
           _hover={{ bgColor: secondaryLightColor }}
           aria-label="facebook"
           icon={<SiReact style={style} />}
@@ -100,7 +100,7 @@ const Tag = ({ tag }: Props) => {
           w="45px"
           h="45px"
           m={0}
-          fontSize="30px"
+          fontSize={{ base: '20px', md: '30px' }}
           _hover={{ bgColor: secondaryLightColor }}
           aria-label="facebook"
           icon={<SiGooglecloud style={style} />}
@@ -114,7 +114,7 @@ const Tag = ({ tag }: Props) => {
           w="45px"
           h="45px"
           m={0}
-          fontSize="30px"
+          fontSize={{ base: '20px', md: '30px' }}
           _hover={{ bgColor: secondaryLightColor }}
           aria-label="facebook"
           icon={<SiFlutter style={style} />}

@@ -17,22 +17,34 @@ const About = () => {
       p={5}
       alignItems="center"
       alignSelf="center"
+      flexDir={{ base: 'column', md: 'row' }}
     >
       <VStack
         spacing={5}
         flexDir="column"
-        w="30%"
+        w={{ base: '100%', md: '30%' }}
         justify="center"
         alignItems="start"
       >
-        <ThemeText type="h2" text="Who am I?" style={{ color: primaryColor }} />
-        <ThemeText type="h1" text="About me" />
+        <Box>
+          <ThemeText
+            type="h2"
+            text="Who am I?"
+            style={{ color: primaryColor }}
+          />
+          <ThemeText type="h1" text="About me" />
+        </Box>
         <ThemeText
           type="h3"
           text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
         />
       </VStack>
-      <Flex pos="relative" w="40%" m={5} alignItems="center">
+      <Flex
+        pos="relative"
+        w={{ base: '80%', md: '40%' }}
+        m={{ base: 1, md: 5 }}
+        alignItems="center"
+      >
         <Avatar
           w="100%"
           h="fit-content"
