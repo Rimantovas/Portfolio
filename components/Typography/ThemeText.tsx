@@ -10,25 +10,32 @@ interface Props {
 import '@fontsource/nunito'
 import GlitchText from '../GlitchText'
 import { CSSObject } from '@emotion/react'
+import { motion } from 'framer-motion'
+import { primaryColor } from '../../theme'
 
 const ThemeText = ({ type, text, style, isGlitch, _hover }: Props) => {
   switch (type) {
     case 'h1':
       return (
-        <Text
-          as="h1"
-          fontFamily="Nunito"
-          fontStyle="normal"
-          fontWeight="bold"
-          fontSize={{ base: '28px', sm: '28px', md: '36px', lg: '80px' }}
-          lineHeight={{ base: '28px', sm: '28px', md: '36px', lg: '80px' }}
-          letterSpacing="-0.011em"
-          color={'#23262F'}
-          _hover={_hover}
-          {...style}
-        >
-          {isGlitch ? <GlitchText>{text}</GlitchText> : text}
-        </Text>
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <Text
+            as="h1"
+            fontFamily="Nunito"
+            fontStyle="normal"
+            fontWeight="bold"
+            fontSize={{ base: '28px', sm: '28px', md: '36px', lg: '80px' }}
+            lineHeight={{ base: '28px', sm: '28px', md: '36px', lg: '80px' }}
+            letterSpacing="-0.011em"
+            color={'#23262F'}
+            _hover={{
+              color: primaryColor,
+              textShadow: `0 0 5px ${primaryColor}, 0 0 10px white`,
+            }}
+            {...style}
+          >
+            {isGlitch ? <GlitchText>{text}</GlitchText> : text}
+          </Text>
+        </motion.div>
       )
     case 'h2':
       return (

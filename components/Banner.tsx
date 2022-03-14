@@ -14,6 +14,7 @@ import { SiFacebook, SiGmail } from 'react-icons/si'
 import {
   primaryColor,
   primaryDarkColor,
+  primaryLightColor,
   secondaryDarkColor,
   secondaryLightColor,
 } from '../theme'
@@ -81,7 +82,7 @@ const Banner = () => {
         },
         onHover: {
           enable: true,
-          mode: 'bubble',
+          mode: ['bubble', 'connect'],
         },
       },
       modes: {
@@ -91,6 +92,14 @@ const Banner = () => {
           opacity: 0.5,
           size: 12,
           color: primaryColor,
+        },
+        connect: {
+          color: {
+            value: primaryColor,
+          },
+          distance: 50,
+          lineLinked: { opacity: 0.5 },
+          radius: 60,
         },
         grab: {
           distance: 400,
@@ -109,6 +118,7 @@ const Banner = () => {
         color: {
           value: secondaryLightColor,
         },
+        scale: 2,
         distance: 50,
         enable: true,
         opacity: 0.8,
@@ -116,7 +126,7 @@ const Banner = () => {
       move: {
         attract: {
           rotate: {
-            x: 600,
+            x: 1000,
             y: 1200,
           },
         },
@@ -147,7 +157,7 @@ const Banner = () => {
         },
         value: 2,
         animation: {
-          speed: 40,
+          speed: 50,
           minimumValue: 0.1,
         },
       },
@@ -160,7 +170,7 @@ const Banner = () => {
             value: primaryColor,
           },
           width: 0.3,
-          opacity: 0.5,
+          opacity: 0.3,
         },
       },
       enable: true,
@@ -168,7 +178,7 @@ const Banner = () => {
         arrangement: 'equidistant' as const,
       },
       move: {
-        radius: 20,
+        radius: 30,
         type: 'path' as const,
       },
       scale: 1,
@@ -202,16 +212,8 @@ const Banner = () => {
               text="Web / app developer"
               style={{ color: primaryColor }}
             />
-            <motion.div whileHover={{ scale: 1.1 }}>
-              <ThemeText
-                type="h1"
-                text="Hey, I'm Rimas Povilaitis"
-                _hover={{
-                  color: primaryColor,
-                  textShadow: `0 0 5px ${primaryColor}, 0 0 10px white`,
-                }}
-              />
-            </motion.div>
+
+            <ThemeText type="h1" text="Hey, I'm Rimas Povilaitis" />
             <Box h="3rem" />
             <ThemeText
               type="h3"
