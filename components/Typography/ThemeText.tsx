@@ -11,13 +11,17 @@ import '@fontsource/nunito'
 import GlitchText from '../GlitchText'
 import { CSSObject } from '@emotion/react'
 import { motion } from 'framer-motion'
-import { primaryColor } from '../../theme'
+import {
+  primaryColor,
+  primaryLightColor,
+  secondaryLightColor,
+} from '../../theme'
 
 const ThemeText = ({ type, text, style, isGlitch, _hover }: Props) => {
   switch (type) {
     case 'h1':
       return (
-        <motion.div whileHover={{ scale: 1.1 }}>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.1 }}>
           <Text
             as="h1"
             fontFamily="Nunito"
@@ -28,8 +32,13 @@ const ThemeText = ({ type, text, style, isGlitch, _hover }: Props) => {
             letterSpacing="-0.011em"
             color={'#23262F'}
             _hover={{
-              color: primaryColor,
-              textShadow: `0 0 5px ${primaryColor}, 0 0 10px white`,
+              color: primaryLightColor,
+              textShadow: `0 0 7px ${primaryLightColor}, 
+              0 0 10px ${primaryLightColor},
+              0 0 20px ${secondaryLightColor}, 
+              0 0 30px ${primaryColor},
+              0 0 40px ${primaryColor},
+              0 0 50px ${primaryColor}`,
             }}
             {...style}
           >

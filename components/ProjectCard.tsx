@@ -50,7 +50,7 @@ const ProjectCard = ({
       onMouseLeave={() => {
         setIsOpen(false)
       }}
-      onClick={() => setIsOpen((prev) => !prev)}
+      onClick={() => setIsOpen(true)}
       flexDir="row"
       backgroundSize="200%"
       background={`url('${imageUrl}')`}

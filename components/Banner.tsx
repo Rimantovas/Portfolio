@@ -232,48 +232,77 @@ const Banner = () => {
               href="https://github.com/Rimantovas"
               rel="noreferrer"
             >
-              <IconButton
-                borderRadius="15px"
-                bgColor="transparent"
-                w="60px"
-                h="60px"
-                fontSize="40px"
-                _hover={{ bgColor: secondaryLightColor }}
-                aria-label="facebook"
-                icon={<BsGithub color={primaryDarkColor} />}
-              />
+              <motion.div
+                style={{ borderRadius: '50%' }}
+                color={primaryDarkColor}
+                whileHover={{
+                  scale: 1.1,
+                  backgroundColor: primaryColor,
+                  color: primaryLightColor,
+                  textShadow: `0 0 8px ${primaryColor}`,
+                  boxShadow: `0 0 5px white, 0 0 15px ${primaryColor}`,
+                }}
+                whileTap={{
+                  scale: 1.1,
+                  backgroundColor: primaryColor,
+                  color: primaryLightColor,
+                  textShadow: `0 0 8px ${primaryColor}`,
+                  boxShadow: `0 0 5px white, 0 0 15px ${primaryColor}`,
+                }}
+              >
+                <BsGithub size="40px" />
+              </motion.div>
             </a>
             <a
               target="_blank"
               href="https://www.linkedin.com/in/rimas-povilaitis"
               rel="noreferrer"
             >
-              <IconButton
-                borderRadius="15px"
-                bgColor="transparent"
-                w="60px"
-                h="60px"
-                fontSize="40px"
-                _hover={{ bgColor: secondaryLightColor }}
-                aria-label="facebook"
-                icon={<BsLinkedin color={primaryDarkColor} />}
-              />
+              <motion.div
+                color={primaryDarkColor}
+                whileHover={{
+                  scale: 1.1,
+                  backgroundColor: primaryColor,
+                  color: primaryLightColor,
+                  textShadow: `0 0 8px ${primaryColor}`,
+                  boxShadow: `0 0 5px white, 0 0 15px ${primaryColor}`,
+                }}
+                whileTap={{
+                  scale: 1.1,
+                  backgroundColor: primaryColor,
+                  color: primaryLightColor,
+                  textShadow: `0 0 8px ${primaryColor}`,
+                  boxShadow: `0 0 5px white, 0 0 15px ${primaryColor}`,
+                }}
+              >
+                <BsLinkedin size="40px" />
+              </motion.div>
             </a>
             <a
               target="_blank"
               href="https://www.facebook.com/rimas.povilaitis.7"
               rel="noreferrer"
             >
-              <IconButton
-                borderRadius="15px"
-                bgColor="transparent"
-                w="60px"
-                h="60px"
-                fontSize="40px"
-                _hover={{ bgColor: secondaryLightColor }}
-                aria-label="facebook"
-                icon={<SiFacebook color={primaryDarkColor} />}
-              />
+              <motion.div
+                style={{ borderRadius: '50%' }}
+                color={primaryDarkColor}
+                whileHover={{
+                  scale: 1.1,
+                  backgroundColor: primaryColor,
+                  color: primaryLightColor,
+                  textShadow: `0 0 8px ${primaryColor}`,
+                  boxShadow: `0 0 5px white, 0 0 15px ${primaryColor}`,
+                }}
+                whileTap={{
+                  scale: 1.1,
+                  backgroundColor: primaryColor,
+                  color: primaryLightColor,
+                  textShadow: `0 0 8px ${primaryColor}`,
+                  boxShadow: `0 0 5px white, 0 0 15px ${primaryColor}`,
+                }}
+              >
+                <SiFacebook size="40px" />
+              </motion.div>
             </a>
           </HStack>
           <Flex w={{ base: '100%', md: '80%' }} p={5} justify="center">
