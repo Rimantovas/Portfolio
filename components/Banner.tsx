@@ -23,6 +23,8 @@ import { PolygonMaskType } from 'tsparticles'
 import { useInViewport } from 'react-in-viewport'
 import { Motion } from 'tsparticles/Options/Classes/Motion/Motion'
 import { motion } from 'framer-motion'
+import { basicOptions, upgradedOptions } from '../utils/ParticlesConfig'
+import GlowingIcon from './GlowingIcon'
 
 const Banner = () => {
   const ref = useRef(null)
@@ -32,160 +34,6 @@ const Banner = () => {
     { disconnectOnLeave: false },
     {}
   )
-  const options = {
-    preset: 'links',
-    background: {
-      color: 'none',
-    },
-    interactivity: {
-      events: {
-        onHover: {
-          enable: true,
-          mode: 'bubble',
-        },
-      },
-    },
-    particles: {
-      links: {
-        distance: 150,
-        enable: true,
-      },
-      move: {
-        enable: true,
-      },
-      size: {
-        value: 1,
-      },
-      shape: {
-        type: 'circle',
-      },
-    },
-    fullScreen: false,
-    backgroundMode: true,
-  }
-  const options2 = {
-    background: {
-      color: 'none',
-    },
-    fullScreen: false,
-    backgroundMode: false,
-    detectRetina: false,
-    interactivity: {
-      events: {
-        onClick: {
-          enable: true,
-          mode: 'grab',
-        },
-        onDiv: {
-          selectors: '#repulse-div',
-          mode: 'repulse',
-        },
-        onHover: {
-          enable: true,
-          mode: ['bubble', 'connect'],
-        },
-      },
-      modes: {
-        bubble: {
-          distance: 40,
-          duration: 2,
-          opacity: 0.5,
-          size: 12,
-          color: primaryColor,
-        },
-        connect: {
-          color: {
-            value: primaryColor,
-          },
-          distance: 50,
-          lineLinked: { opacity: 0.5 },
-          radius: 60,
-        },
-        grab: {
-          distance: 400,
-        },
-        slow: {
-          factor: 1,
-          radius: 0,
-        },
-      },
-    },
-    particles: {
-      color: {
-        value: secondaryLightColor,
-      },
-      links: {
-        color: {
-          value: secondaryLightColor,
-        },
-        scale: 2,
-        distance: 50,
-        enable: true,
-        opacity: 0.8,
-      },
-      move: {
-        attract: {
-          rotate: {
-            x: 1000,
-            y: 1200,
-          },
-        },
-        enable: true,
-        outModes: 'bounce' as const,
-        speed: 1,
-      },
-      number: {
-        density: {
-          area: 20000,
-        },
-        value: 200,
-      },
-      opacity: {
-        value: {
-          min: 0.05,
-          max: 0.8,
-        },
-        animation: {
-          enable: true,
-          minimumValue: 0.05,
-        },
-      },
-      size: {
-        random: {
-          enable: true,
-          minimumValue: 1,
-        },
-        value: 2,
-        animation: {
-          speed: 50,
-          minimumValue: 0.1,
-        },
-      },
-    },
-    polygon: {
-      draw: {
-        enable: true,
-        stroke: {
-          color: {
-            value: primaryColor,
-          },
-          width: 0.3,
-          opacity: 0.3,
-        },
-      },
-      enable: true,
-      inline: {
-        arrangement: 'equidistant' as const,
-      },
-      move: {
-        radius: 30,
-        type: 'path' as const,
-      },
-      scale: 1,
-      type: 'inline' as PolygonMaskType,
-      url: '/smalldeer.svg',
-    },
-  }
   return (
     <Flex
       className="section"
@@ -227,99 +75,44 @@ const Banner = () => {
             spacing={10}
             justify="center"
           >
-            <a
-              target="_blank"
-              href="https://github.com/Rimantovas"
-              rel="noreferrer"
+            <GlowingIcon
+              size="40px"
+              isRound
+              url="https://github.com/Rimantovas"
             >
-              <motion.div
-                style={{ borderRadius: '50%' }}
-                color={primaryDarkColor}
-                whileHover={{
-                  scale: 1.1,
-                  backgroundColor: primaryColor,
-                  color: primaryLightColor,
-                  textShadow: `0 0 8px ${primaryColor}`,
-                  boxShadow: `0 0 5px white, 0 0 15px ${primaryColor}`,
-                }}
-                whileTap={{
-                  scale: 1.1,
-                  backgroundColor: primaryColor,
-                  color: primaryLightColor,
-                  textShadow: `0 0 8px ${primaryColor}`,
-                  boxShadow: `0 0 5px white, 0 0 15px ${primaryColor}`,
-                }}
-              >
-                <BsGithub size="40px" />
-              </motion.div>
-            </a>
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/rimas-povilaitis"
-              rel="noreferrer"
+              <BsGithub />
+            </GlowingIcon>
+            <GlowingIcon
+              size="40px"
+              url="https://www.linkedin.com/in/rimas-povilaitis"
             >
-              <motion.div
-                color={primaryDarkColor}
-                whileHover={{
-                  scale: 1.1,
-                  backgroundColor: primaryColor,
-                  color: primaryLightColor,
-                  textShadow: `0 0 8px ${primaryColor}`,
-                  boxShadow: `0 0 5px white, 0 0 15px ${primaryColor}`,
-                }}
-                whileTap={{
-                  scale: 1.1,
-                  backgroundColor: primaryColor,
-                  color: primaryLightColor,
-                  textShadow: `0 0 8px ${primaryColor}`,
-                  boxShadow: `0 0 5px white, 0 0 15px ${primaryColor}`,
-                }}
-              >
-                <BsLinkedin size="40px" />
-              </motion.div>
-            </a>
-            <a
-              target="_blank"
-              href="https://www.facebook.com/rimas.povilaitis.7"
-              rel="noreferrer"
+              <BsLinkedin />
+            </GlowingIcon>
+            <GlowingIcon
+              isRound
+              size="40px"
+              url="https://www.facebook.com/rimas.povilaitis.7"
             >
-              <motion.div
-                style={{ borderRadius: '50%' }}
-                color={primaryDarkColor}
-                whileHover={{
-                  scale: 1.1,
-                  backgroundColor: primaryColor,
-                  color: primaryLightColor,
-                  textShadow: `0 0 8px ${primaryColor}`,
-                  boxShadow: `0 0 5px white, 0 0 15px ${primaryColor}`,
-                }}
-                whileTap={{
-                  scale: 1.1,
-                  backgroundColor: primaryColor,
-                  color: primaryLightColor,
-                  textShadow: `0 0 8px ${primaryColor}`,
-                  boxShadow: `0 0 5px white, 0 0 15px ${primaryColor}`,
-                }}
-              >
-                <SiFacebook size="40px" />
-              </motion.div>
-            </a>
+              <SiFacebook />
+            </GlowingIcon>
           </HStack>
-          <Flex w={{ base: '100%', md: '80%' }} p={5} justify="center">
-            <a href="#ContactSection">
-              <Button p={5} w="200px" h="80px">
-                <ThemeText
-                  type="h2"
-                  text="Let's talk"
-                  style={{ color: 'white', fontWeight: 'normal' }}
-                />
-              </Button>
-            </a>
-          </Flex>
+          <motion.div whileHover={{ scale: 1.1 }}>
+            <Flex w={{ base: '100%', md: '80%' }} p={5} justify="center">
+              <a href="#ContactSection">
+                <Button p={5} w="200px" h="80px">
+                  <ThemeText
+                    type="h2"
+                    text="Let's talk"
+                    style={{ color: 'white', fontWeight: 'normal' }}
+                  />
+                </Button>
+              </a>
+            </Flex>
+          </motion.div>
         </ScaleFade>
       </Flex>
 
-      <Flex
+      <Box
         display={{ base: 'none', sm: 'none', md: 'flex', lg: 'flex' }}
         w="60%"
         h="60vh"
@@ -332,9 +125,9 @@ const Banner = () => {
             height: '100%',
             width: '100%',
           }}
-          options={options2}
+          options={upgradedOptions}
         />
-      </Flex>
+      </Box>
     </Flex>
   )
 }

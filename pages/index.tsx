@@ -9,9 +9,6 @@ import Projects from '../components/Projects'
 import ThemeText from '../components/Typography/ThemeText'
 
 const Home: NextPage = () => {
-  if (typeof window) {
-    require('pathseg')
-  }
   return (
     <Layout>
       <Banner />

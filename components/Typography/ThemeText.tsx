@@ -21,7 +21,18 @@ const ThemeText = ({ type, text, style, isGlitch, _hover }: Props) => {
   switch (type) {
     case 'h1':
       return (
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.1 }}>
+        <motion.div
+          color={'#23262F'}
+          whileHover={{
+            scale: 1.1,
+            color: primaryLightColor,
+            textShadow: `0 0 7px ${primaryLightColor},
+          0 0 10px ${primaryLightColor},
+          0 0 40px ${primaryColor},
+          0 0 50px ${primaryColor}`,
+          }}
+          whileTap={{ scale: 1.1 }}
+        >
           <Text
             as="h1"
             fontFamily="Nunito"
@@ -30,13 +41,10 @@ const ThemeText = ({ type, text, style, isGlitch, _hover }: Props) => {
             fontSize={{ base: '28px', sm: '28px', md: '36px', lg: '80px' }}
             lineHeight={{ base: '28px', sm: '28px', md: '36px', lg: '80px' }}
             letterSpacing="-0.011em"
-            color={'#23262F'}
             _hover={{
               color: primaryLightColor,
-              textShadow: `0 0 7px ${primaryLightColor}, 
+              textShadow: `0 0 7px ${primaryLightColor},
               0 0 10px ${primaryLightColor},
-              0 0 20px ${secondaryLightColor}, 
-              0 0 30px ${primaryColor},
               0 0 40px ${primaryColor},
               0 0 50px ${primaryColor}`,
             }}
