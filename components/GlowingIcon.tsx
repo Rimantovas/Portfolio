@@ -15,7 +15,7 @@ const GlowingIcon = ({ children, isRound, url, size }: Props) => {
     <a target="_blank" href={url} rel="noreferrer">
       <motion.div
         style={{
-          borderRadius: isRound ? '50%' : 'none',
+          borderRadius: isRound ? '50%' : '10%',
           width: size,
           height: size,
           fontSize: size,

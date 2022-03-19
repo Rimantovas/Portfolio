@@ -32,6 +32,7 @@ export const secondaryLightColor = '#9BA7D6'
 export const primaryDarkColor = '#15192A'
 export const secondaryDarkColor = '#4B4C58'
 
+
 export const bgGradient = `radial-gradient(circle at 0% 0%, rgba(155, 167, 214, 0.7) 0%, rgba(235, 236, 236, 0) 100%),
 radial-gradient(circle at 100% 53%, rgba(255, 167, 214, 0.1) 15%, rgba(235, 236, 236, 0) 100%),
 radial-gradient(circle at 0% 100%, rgba(155, 167, 214, 1) 10%, rgba(235, 236, 236, 0) 100%)

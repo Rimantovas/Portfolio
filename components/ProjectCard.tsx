@@ -7,8 +7,10 @@ import {
   ScaleFade,
   Slide,
 } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React, { ReactNode, useState } from 'react'
+import { Motion } from 'tsparticles/Options/Classes/Motion/Motion'
 import {
   cardGradient,
   primaryColor,
@@ -36,6 +38,7 @@ const ProjectCard = ({
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   return (
+   
     <AspectRatio
       w="100%"
       ratio={3 / 2}
@@ -58,27 +61,23 @@ const ProjectCard = ({
       alignItems="flex-end"
       alignContent="flex-end"
     >
-      <Slide
-        direction="bottom"
-        in={isOpen}
-        style={{
-          display: 'flex',
-          zIndex: 10,
-          position: 'relative',
-          width: '100%',
-        }}
-      >
-        <Box
+       <motion.div
+    style={{background: 'rgba(0,0,0,0)', width: '100%', display: 'flex', opacity: '0%'}}
+    whileHover={{background: 'rgba(0,0,0,0.5)', opacity: '100%', scale: 1.1}}
+    >
+      <Flex
           marginTop="auto"
           flexDir="column"
-          p={5}
+          p={10}
           w="100%"
+          h='100%'
           bottom="0px"
-          borderRadius="15px 15px 0px 0px"
+          // borderRadius="15px 15px 0px 0px"
           //   bgColor={secondaryLightColor}
-          bgGradient={cardGradient}
-          alignItems="flex-start"
-          textAlign="start"
+          // bgGradient={cardGradient}
+          justifyContent='center'
+          alignItems="center"
+          textAlign="center"
         >
           <ThemeText
             type="h2"
@@ -103,8 +102,20 @@ const ProjectCard = ({
             </a>
             {tags && tags.map((tag) => <Tag tag={tag} key={tag} />)}
           </HStack>
-        </Box>
-      </Slide>
+        </Flex>
+      {/* <Slide
+        direction="bottom"
+        in={isOpen}
+        style={{
+          display: 'flex',
+          zIndex: 10,
+          position: 'relative',
+          width: '100%',
+        }}
+      >
+        
+      </Slide> */}
+      </motion.div>
     </AspectRatio>
   )
 }
