@@ -1,13 +1,7 @@
 import { Button, Flex, HStack, Input, Textarea, VStack } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import React from 'react'
-import {
-  secondaryDarkColor,
-  secondaryLightColor,
-  primaryColor,
-  primaryDarkColor,
-  primaryLightColor,
-} from '../theme'
+import { textColor, primary } from '../theme'
 
 const ContactForm = () => {
   return (
@@ -17,11 +11,11 @@ const ContactForm = () => {
           <Input
             size="lg"
             borderWidth="2px"
-            borderColor={primaryDarkColor}
-            _hover={{ borderColor: primaryColor }}
+            borderColor={textColor}
+            _hover={{ borderColor: primary }}
             type="name"
-            _placeholder={{ opacity: 0.8, color: primaryDarkColor }}
-            focusBorderColor={primaryColor}
+            _placeholder={{ opacity: 0.8, color: textColor }}
+            focusBorderColor={primary}
             placeholder="Name"
           />
         </motion.div>
@@ -29,11 +23,11 @@ const ContactForm = () => {
           <Input
             size="lg"
             borderWidth="2px"
-            borderColor={primaryDarkColor}
-            _hover={{ borderColor: primaryColor }}
+            borderColor={textColor}
+            _hover={{ borderColor: primary }}
             type="email"
-            _placeholder={{ opacity: 0.8, color: primaryDarkColor }}
-            focusBorderColor={primaryColor}
+            _placeholder={{ opacity: 0.8, color: textColor }}
+            focusBorderColor={primary}
             placeholder="Email"
           />
         </motion.div>
@@ -42,10 +36,10 @@ const ContactForm = () => {
         <Input
           size="lg"
           borderWidth="2px"
-          borderColor={primaryDarkColor}
-          _hover={{ borderColor: primaryColor }}
-          _placeholder={{ opacity: 0.8, color: primaryDarkColor }}
-          focusBorderColor={primaryColor}
+          borderColor={textColor}
+          _hover={{ borderColor: primary }}
+          _placeholder={{ opacity: 0.8, color: textColor }}
+          focusBorderColor={primary}
           placeholder="Subject"
         />
       </motion.div>
@@ -58,10 +52,10 @@ const ContactForm = () => {
           minH="10rem"
           overflow="hidden"
           maxLength={300}
-          borderColor={primaryDarkColor}
-          _hover={{ borderColor: primaryColor }}
-          _placeholder={{ opacity: 0.8, color: primaryDarkColor }}
-          focusBorderColor={primaryColor}
+          borderColor={textColor}
+          _hover={{ borderColor: primary }}
+          _placeholder={{ opacity: 0.8, color: textColor }}
+          focusBorderColor={primary}
           placeholder="Message"
         ></Textarea>
       </motion.div>

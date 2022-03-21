@@ -1,6 +1,6 @@
 import { Box, Flex, VStack } from '@chakra-ui/react'
 import React from 'react'
-import { bgGradient, primaryColor } from '../theme'
+import { bgGradient, primary } from '../theme'
 import ProjectCard from './ProjectCard'
 import ThemeText from './Typography/ThemeText'
 import {
@@ -32,11 +32,7 @@ const Projects = () => {
         alignItems="center"
       >
         <Box>
-          <ThemeText
-            type="h2"
-            text="Projects"
-            style={{ color: primaryColor }}
-          />
+          <ThemeText type="h2" text="Projects" style={{ color: primary }} />
           <ThemeText type="h1" text="My portfolio" />
         </Box>
         <ThemeText

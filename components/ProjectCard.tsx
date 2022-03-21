@@ -11,13 +11,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React, { ReactNode, useState } from 'react'
 import { Motion } from 'tsparticles/Options/Classes/Motion/Motion'
-import {
-  cardGradient,
-  primaryColor,
-  primaryLightColor,
-  secondaryDarkColor,
-  secondaryLightColor,
-} from '../theme'
+import { cardGradient, textColor, primary } from '../theme'
 import Tag from './Tag'
 import ThemeText from './Typography/ThemeText'
 
@@ -38,7 +32,6 @@ const ProjectCard = ({
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   return (
-   
     <AspectRatio
       w="100%"
       ratio={3 / 2}
@@ -61,32 +54,37 @@ const ProjectCard = ({
       alignItems="flex-end"
       alignContent="flex-end"
     >
-       <motion.div
-    style={{background: 'rgba(0,0,0,0)', width: '100%', display: 'flex', opacity: '0%'}}
-    whileHover={{background: 'rgba(0,0,0,0.5)', opacity: '100%', scale: 1.1}}
-    >
-      <Flex
+      <motion.div
+        style={{
+          background: 'rgba(0,0,0,0)',
+          width: '100%',
+          display: 'flex',
+          opacity: '0%',
+        }}
+        whileHover={{
+          background: 'rgba(0,0,0,0.5)',
+          opacity: '100%',
+          scale: 1.1,
+        }}
+      >
+        <Flex
           marginTop="auto"
           flexDir="column"
           p={10}
           w="100%"
-          h='100%'
+          h="100%"
           bottom="0px"
           // borderRadius="15px 15px 0px 0px"
           //   bgColor={secondaryLightColor}
           // bgGradient={cardGradient}
-          justifyContent='center'
+          justifyContent="center"
           alignItems="center"
           textAlign="center"
         >
-          <ThemeText
-            type="h2"
-            text={title}
-            style={{ color: primaryLightColor }}
-          />
+          <ThemeText type="h2" text={title} style={{ color: textColor }} />
           <ThemeText
             type="p"
-            style={{ noOfLines: 5, color: primaryLightColor }}
+            style={{ noOfLines: 5, color: textColor }}
             text={description}
           />
           <HStack mt={{ base: 1, md: 5 }} spacing={2}>
@@ -96,14 +94,14 @@ const ProjectCard = ({
               style={{ pointerEvents: siteUrl ? 'all' : 'none' }}
               rel="noreferrer"
             >
-              <Button bgColor={siteUrl ? primaryColor : secondaryDarkColor}>
+              <Button bgColor={siteUrl ? primary : textColor}>
                 Visit project
               </Button>
             </a>
             {tags && tags.map((tag) => <Tag tag={tag} key={tag} />)}
           </HStack>
         </Flex>
-      {/* <Slide
+        {/* <Slide
         direction="bottom"
         in={isOpen}
         style={{

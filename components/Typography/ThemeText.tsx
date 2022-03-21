@@ -11,25 +11,19 @@ import '@fontsource/nunito'
 import GlitchText from '../GlitchText'
 import { CSSObject } from '@emotion/react'
 import { motion } from 'framer-motion'
-import {
-  primaryColor,
-  primaryLightColor,
-  secondaryLightColor,
-} from '../../theme'
+import { textColor, primary, secondaryTextColor } from '../../theme'
 
 const ThemeText = ({ type, text, style, isGlitch, _hover }: Props) => {
   switch (type) {
     case 'h1':
       return (
         <motion.div
-          color={'#23262F'}
           whileHover={{
             scale: 1.1,
-            color: primaryLightColor,
-            textShadow: `0 0 7px ${primaryLightColor},
-          0 0 10px ${primaryLightColor},
-          0 0 40px ${primaryColor},
-          0 0 50px ${primaryColor}`,
+            textShadow: `0 0 7px ${textColor},
+          0 0 10px ${textColor},
+          0 0 40px ${primary},
+          0 0 50px ${primary}`,
           }}
           whileTap={{ scale: 1.1 }}
         >
@@ -41,16 +35,17 @@ const ThemeText = ({ type, text, style, isGlitch, _hover }: Props) => {
             fontSize={{ base: '28px', sm: '28px', md: '36px', lg: '80px' }}
             lineHeight={{ base: '28px', sm: '28px', md: '36px', lg: '80px' }}
             letterSpacing="-0.011em"
+            color={textColor}
             _hover={{
-              color: primaryLightColor,
-              textShadow: `0 0 7px ${primaryLightColor},
-              0 0 10px ${primaryLightColor},
-              0 0 40px ${primaryColor},
-              0 0 50px ${primaryColor}`,
+              color: textColor,
+              textShadow: `0 0 7px ${textColor},
+              0 0 10px ${textColor},
+              0 0 40px ${primary},
+              0 0 50px ${primary}`,
             }}
             {...style}
           >
-            {isGlitch ? <GlitchText>{text}</GlitchText> : text}
+            {text}
           </Text>
         </motion.div>
       )
@@ -64,7 +59,7 @@ const ThemeText = ({ type, text, style, isGlitch, _hover }: Props) => {
           fontSize="24px"
           lineHeight="32px"
           letterSpacing="-0.011em"
-          color={'#23262F'}
+          color={secondaryTextColor}
           _hover={_hover}
           {...style}
         >
@@ -81,7 +76,7 @@ const ThemeText = ({ type, text, style, isGlitch, _hover }: Props) => {
           fontSize="19px"
           lineHeight="25px"
           letterSpacing="-0.011em"
-          color={'#23262F'}
+          color={secondaryTextColor}
           _hover={_hover}
           {...style}
         >
@@ -97,7 +92,7 @@ const ThemeText = ({ type, text, style, isGlitch, _hover }: Props) => {
           fontSize="15px"
           lineHeight="16px"
           letterSpacing="-0.011em"
-          color={'#23262F'}
+          color={secondaryTextColor}
           _hover={_hover}
           {...style}
         >
@@ -113,7 +108,7 @@ const ThemeText = ({ type, text, style, isGlitch, _hover }: Props) => {
           fontSize="15px"
           lineHeight="16px"
           letterSpacing="-0.011em"
-          color={'#23262F'}
+          color={secondaryTextColor}
           _hover={_hover}
           {...style}
         >

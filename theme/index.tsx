@@ -1,5 +1,6 @@
 import { extendTheme, ThemeConfig } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
+import { addAlpha } from '../utils/ColorManipulation'
 
 const config: ThemeConfig = {
   initialColorMode: 'dark',
@@ -26,17 +27,55 @@ export const chakraSizeToPx = (size: string) => {
   }
 }
 
-export const primaryColor = '#1547DC'
-export const primaryLightColor = '#EBECEC'
-export const secondaryLightColor = '#9BA7D6'
-export const primaryDarkColor = '#15192A'
-export const secondaryDarkColor = '#4B4C58'
+// export const primaryColor = '#1547DC' //primary
+// export const primaryLightColor = '#EBECEC' //bg
+// export const secondaryLightColor = '#9BA7D6' //secondary
+// export const primaryDarkColor = '#15192A' //text
+// export const secondaryDarkColor = '#4B4C58' //text
 
+export const textColor = '#edf2f4'
+export const secondaryTextColor = '#8d99ae'
+export const bgColor = '#010108'
+export const primary = '#7232f2'
+export const lightColor = '#f6b3e5'
 
-export const bgGradient = `radial-gradient(circle at 0% 0%, rgba(155, 167, 214, 0.7) 0%, rgba(235, 236, 236, 0) 100%),
-radial-gradient(circle at 100% 53%, rgba(255, 167, 214, 0.1) 15%, rgba(235, 236, 236, 0) 100%),
-radial-gradient(circle at 0% 100%, rgba(155, 167, 214, 1) 10%, rgba(235, 236, 236, 0) 100%)
+export const gradienttest =
+  'linear-gradient(134deg, rgba(114, 50, 242, 1) 0%, rgba(195, 140, 255, 1) 100%)'
+
+// export const primaryColor = '#310A5D' //primary
+// export const primaryLightColor = '#000' //bg
+// export const secondaryLightColor = '#411E8F' //secondary
+// export const primaryDarkColor = '#fff' //text
+// export const secondaryDarkColor = '#fff' //text
+
+// export const bgGradient = `radial-gradient(circle at 0% 0%, ${addAlpha(
+//   primaryColor,
+//   0.3
+// )} 0%, rgba(100, 0, 0, 0) 100%),
+// radial-gradient(circle at 100% 53%, ${addAlpha(
+//   secondaryLightColor,
+//   0.1
+// )} 15%, rgba(100, 0, 0, 0) 100%),
+// radial-gradient(circle at 0% 100%, ${addAlpha(
+//   primaryColor,
+//   0.5
+// )} 10%, rgba(0, 0, 0, 0) 100%)
+// `
+
+export const bgGradient = `radial-gradient(circle at 0% 0%, ${addAlpha(
+  primary,
+  0.1
+)} 0%, rgba(0, 0, 0, 0) 100%),
+radial-gradient(circle at 0% 53%, ${addAlpha(
+  primary,
+  0.3
+)} 0%, rgba(0, 0, 0, 0) 100%),
+radial-gradient(circle at 100% 100%, ${addAlpha(
+  primary,
+  0.1
+)} 0%, rgba(0, 0, 0, 0) 100%)
 `
+
 export const cardGradient =
   'linear-gradient(37deg, rgba(25, 47, 133, 1) 0%, rgba(21, 71, 220, 1) 100%)'
 const theme: any = extendTheme({
@@ -44,8 +83,8 @@ const theme: any = extendTheme({
   styles: {
     global: {
       body: {
-        color: primaryDarkColor,
-        bgColor: primaryLightColor,
+        color: textColor,
+        bgColor: bgColor,
       },
       _focus: {
         boxShadow: 'none !important',
@@ -121,33 +160,16 @@ const theme: any = extendTheme({
       },
       variants: {
         solid: {
-          bgColor: primaryColor,
+          bgColor: primary,
           color: 'white',
           _hover: {
-            bg: primaryColor,
+            bgGradient: gradienttest,
             _disabled: {
-              bg: secondaryDarkColor,
+              bgGradient: gradienttest,
             },
           },
           _active: {
-            bg: primaryColor,
-            transform: 'scale(0.95)',
-          },
-        },
-        outline: {
-          bgGradient: 'none',
-          color: primaryDarkColor,
-          border: '2px solid ',
-          borderColor: primaryColor,
-          borderRadius: '25px',
-          _hover: {
-            bg: secondaryLightColor,
-            _disabled: {
-              bg: 'none',
-            },
-          },
-          _active: {
-            bg: 'none',
+            bgGradient: gradienttest,
             transform: 'scale(0.95)',
           },
         },

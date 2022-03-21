@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React, { useRef } from 'react'
 import { useInViewport } from 'react-in-viewport'
 import { Motion } from 'tsparticles/Options/Classes/Motion/Motion'
-import { bgGradient, primaryColor, secondaryLightColor } from '../theme'
+import { bgGradient, primary, textColor } from '../theme'
 import ThemeText from './Typography/ThemeText'
 
 const About = () => {
@@ -67,7 +67,7 @@ const About = () => {
               <ThemeText
                 type="h2"
                 text="Who am I?"
-                style={{ color: primaryColor }}
+                style={{ color: primary }}
               />
               <ThemeText type="h1" text="About me" />
             </Box>
@@ -95,9 +95,9 @@ const About = () => {
               w="100%"
               h="fit-content"
               src="/test.png"
-              borderColor={primaryColor}
+              borderColor={primary}
               borderWidth="2px"
-              bgColor={secondaryLightColor}
+              bgColor={textColor}
             />
           </motion.div>
         </motion.div>

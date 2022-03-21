@@ -8,18 +8,14 @@ import {
   SiReact,
   SiGooglecloud,
 } from 'react-icons/si'
-import {
-  primaryDarkColor,
-  primaryLightColor,
-  secondaryLightColor,
-} from '../theme'
+import { textColor } from '../theme'
 
 interface Props {
   tag: string
 }
 
 const Tag = ({ tag }: Props) => {
-  const style = { color: primaryLightColor }
+  const style = { color: textColor }
 
   switch (tag) {
     case 'flutter':
@@ -31,7 +27,7 @@ const Tag = ({ tag }: Props) => {
           h="45px"
           m={0}
           fontSize={{ base: '20px', md: '30px' }}
-          _hover={{ bgColor: secondaryLightColor }}
+          _hover={{ bgColor: textColor }}
           aria-label="facebook"
           icon={<SiFlutter style={style} />}
         />
@@ -45,7 +41,7 @@ const Tag = ({ tag }: Props) => {
           h="45px"
           m={0}
           fontSize={{ base: '20px', md: '30px' }}
-          _hover={{ bgColor: secondaryLightColor }}
+          _hover={{ bgColor: textColor }}
           aria-label="facebook"
           icon={<SiFirebase style={style} />}
         />
@@ -59,7 +55,7 @@ const Tag = ({ tag }: Props) => {
           h="45px"
           m={0}
           fontSize={{ base: '20px', md: '30px' }}
-          _hover={{ bgColor: secondaryLightColor }}
+          _hover={{ bgColor: textColor }}
           aria-label="facebook"
           icon={<SiChakraui style={style} />}
         />
@@ -73,7 +69,7 @@ const Tag = ({ tag }: Props) => {
           h="45px"
           m={0}
           fontSize={{ base: '20px', md: '30px' }}
-          _hover={{ bgColor: secondaryLightColor }}
+          _hover={{ bgColor: textColor }}
           aria-label="facebook"
           icon={<SiNextdotjs style={style} />}
         />
@@ -87,7 +83,7 @@ const Tag = ({ tag }: Props) => {
           h="45px"
           m={0}
           fontSize={{ base: '20px', md: '30px' }}
-          _hover={{ bgColor: secondaryLightColor }}
+          _hover={{ bgColor: textColor }}
           aria-label="facebook"
           icon={<SiReact style={style} />}
         />
@@ -101,7 +97,7 @@ const Tag = ({ tag }: Props) => {
           h="45px"
           m={0}
           fontSize={{ base: '20px', md: '30px' }}
-          _hover={{ bgColor: secondaryLightColor }}
+          _hover={{ bgColor: textColor }}
           aria-label="facebook"
           icon={<SiGooglecloud style={style} />}
         />
@@ -115,7 +111,7 @@ const Tag = ({ tag }: Props) => {
           h="45px"
           m={0}
           fontSize={{ base: '20px', md: '30px' }}
-          _hover={{ bgColor: secondaryLightColor }}
+          _hover={{ bgColor: textColor }}
           aria-label="facebook"
           icon={<SiFlutter style={style} />}
         />

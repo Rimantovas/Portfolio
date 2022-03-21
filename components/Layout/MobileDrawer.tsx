@@ -10,14 +10,7 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import {
-  bgGradient,
-  primaryColor,
-  primaryDarkColor,
-  primaryLightColor,
-  secondaryDarkColor,
-  secondaryLightColor,
-} from '../../theme'
+import { textColor, primary } from '../../theme'
 import ThemeText from '../Typography/ThemeText'
 import { useRouter } from 'next/router'
 
@@ -32,14 +25,10 @@ const MobileDrawer = ({ page }: Props) => {
     <Flex display={{ base: 'flex', md: 'none' }} zIndex="20">
       <Menu>
         <MenuButton pr={4}>
-          <GiHamburgerMenu size="20px" style={{ color: primaryColor }} />
+          <GiHamburgerMenu size="20px" style={{ color: primary }} />
         </MenuButton>
-        <MenuList
-          color="white"
-          background={secondaryLightColor}
-          borderColor={secondaryLightColor}
-        >
-          <MenuGroup title="Pages" fontSize="20px" color={primaryDarkColor}>
+        <MenuList color="white" background={textColor} borderColor={textColor}>
+          <MenuGroup title="Pages" fontSize="20px" color={textColor}>
             <MenuItem
               _focus={{ background: '#AEBDF3' }}
               onClick={() => router.push('#HomeSection')}
@@ -49,7 +38,7 @@ const MobileDrawer = ({ page }: Props) => {
                   justifyContent="center"
                   size="8px"
                   mr={2}
-                  bg={primaryColor}
+                  bg={primary}
                 />
               )}
 
@@ -57,8 +46,7 @@ const MobileDrawer = ({ page }: Props) => {
                 type="h3"
                 text="Home"
                 style={{
-                  color:
-                    page === 'HomeSection' ? primaryColor : primaryDarkColor,
+                  color: page === 'HomeSection' ? primary : textColor,
                 }}
               />
             </MenuItem>
@@ -71,15 +59,14 @@ const MobileDrawer = ({ page }: Props) => {
                   justifyContent="center"
                   size="8px"
                   mr={2}
-                  bg={primaryColor}
+                  bg={primary}
                 />
               )}
               <ThemeText
                 type="h3"
                 text="About"
                 style={{
-                  color:
-                    page === 'AboutSection' ? primaryColor : primaryDarkColor,
+                  color: page === 'AboutSection' ? primary : textColor,
                 }}
               />
             </MenuItem>
@@ -92,17 +79,14 @@ const MobileDrawer = ({ page }: Props) => {
                   justifyContent="center"
                   size="8px"
                   mr={2}
-                  bg={primaryColor}
+                  bg={primary}
                 />
               )}
               <ThemeText
                 type="h3"
                 text="Projects"
                 style={{
-                  color:
-                    page === 'ProjectsSection'
-                      ? primaryColor
-                      : primaryDarkColor,
+                  color: page === 'ProjectsSection' ? primary : textColor,
                 }}
               />
             </MenuItem>
@@ -115,15 +99,14 @@ const MobileDrawer = ({ page }: Props) => {
                   justifyContent="center"
                   size="8px"
                   mr={2}
-                  bg={primaryColor}
+                  bg={primary}
                 />
               )}
               <ThemeText
                 type="h3"
                 text="Contact me"
                 style={{
-                  color:
-                    page === 'ContactSection' ? primaryColor : primaryDarkColor,
+                  color: page === 'ContactSection' ? primary : textColor,
                 }}
               />
             </MenuItem>

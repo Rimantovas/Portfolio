@@ -1,5 +1,5 @@
 import { PolygonMaskType } from "tsparticles"
-import { primaryColor, secondaryLightColor } from "../theme"
+import { lightColor, primary, secondaryTextColor, textColor } from "../theme"
 
 export const basicOptions = {
     fullScreen: false,
@@ -104,7 +104,7 @@ export const basicOptions = {
         enable: true,
         stroke: {
           color: {
-            value: "rgba(255,255,255,0.2)"
+            value: "rgba(255,255,255, 1)"
           },
           width: 0.5,
           opacity: 0.8
@@ -128,7 +128,6 @@ export const basicOptions = {
     }
   }
  export const linkOptions = {
-    preset: 'links',
     background: {
       color: 'none',
     },
@@ -141,22 +140,33 @@ export const basicOptions = {
       },
     },
     particles: {
-      links: {
-        distance: 150,
-        enable: true,
+        links: {
+          distance: 150,
+          enable: true,
+          opacity: 0.1,
+        },
+        move: {
+          enable: true,
+        },
+        size: {
+          value: 1,
+        },
+        shape: {
+          type: 'circle',
+        },
+        opacity: {
+          value: {
+            min: 0.05,
+            max: 0.3,
+          },
+          animation: {
+            enable: true,
+            minimumValue: 0.05,
+          },
+        },
       },
-      move: {
-        enable: true,
-      },
-      size: {
-        value: 1,
-      },
-      shape: {
-        type: 'circle',
-      },
-    },
-    fullScreen: false,
-    backgroundMode: true,
+    
+    fullScreen: true,
   }
  export const upgradedOptions = {
     background: {
@@ -186,14 +196,14 @@ export const basicOptions = {
           duration: 2,
           opacity: 0.5,
           size: 12,
-          color: primaryColor,
+          color: primary,
         },
         connect: {
           color: {
-            value: primaryColor,
+            value: primary,
           },
           distance: 40,
-          lineLinked: { opacity: 0.5 },
+          lineLinked: { opacity: 1 },
           radius: 60,
         },
         grab: {
@@ -207,11 +217,11 @@ export const basicOptions = {
     },
     particles: {
       color: {
-        value: primaryColor,
+        value: lightColor,
       },
       links: {
         color: {
-          value: secondaryLightColor,
+          value: secondaryTextColor,
         },
         scale: 2,
         distance: 50,
@@ -262,7 +272,7 @@ export const basicOptions = {
         enable: true,
         stroke: {
           color: {
-            value: primaryColor,
+            value: primary,
           },
           width: 0.3,
           opacity: 0.5,

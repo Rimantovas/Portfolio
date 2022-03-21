@@ -11,19 +11,17 @@ import React, { useRef } from 'react'
 import ThemeText from './Typography/ThemeText'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { SiFacebook, SiGmail } from 'react-icons/si'
-import {
-  primaryColor,
-  primaryDarkColor,
-  primaryLightColor,
-  secondaryDarkColor,
-  secondaryLightColor,
-} from '../theme'
+import { primary } from '../theme'
 import Particles from 'react-tsparticles'
 import { PolygonMaskType } from 'tsparticles'
 import { useInViewport } from 'react-in-viewport'
 import { Motion } from 'tsparticles/Options/Classes/Motion/Motion'
 import { motion } from 'framer-motion'
-import { basicOptions, upgradedOptions } from '../utils/ParticlesConfig'
+import {
+  basicOptions,
+  linkOptions,
+  upgradedOptions,
+} from '../utils/ParticlesConfig'
 import GlowingIcon from './GlowingIcon'
 
 const Banner = () => {
@@ -43,11 +41,11 @@ const Banner = () => {
       minHeight="100vh"
       p={5}
       justifyContent="center"
-      alignItems={{ base: 'flex-start', md: 'center' }}
+      alignItems="center"
       alignSelf="center"
     >
       <Flex
-        w={{ base: '100%', sm: '100%', md: '40%', lg: '40%' }}
+        w={{ base: '100%', sm: '100%', md: '60%', lg: '60%' }}
         flexDir="column"
         justify="start"
         ref={ref}
@@ -58,7 +56,7 @@ const Banner = () => {
             <ThemeText
               type="h2"
               text="Web / app developer"
-              style={{ color: primaryColor }}
+              style={{ color: primary }}
             />
 
             <ThemeText type="h1" text="Hey, I'm Rimas Povilaitis" />
@@ -114,12 +112,13 @@ const Banner = () => {
 
       <Box
         display={{ base: 'none', sm: 'none', md: 'flex', lg: 'flex' }}
-        w="60%"
+        w="40%"
         h="60vh"
         flexDir="row"
         position="relative"
       >
         <Particles
+          id="briedis"
           style={{
             position: 'relative',
             height: '100%',

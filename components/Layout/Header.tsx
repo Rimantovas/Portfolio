@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Circle, Flex, HStack, Text, VStack, Button } from '@chakra-ui/react'
 import ThemeText from '../Typography/ThemeText'
-import {
-  bgGradient,
-  primaryColor,
-  primaryDarkColor,
-  secondaryDarkColor,
-} from '../../theme'
+import { bgGradient, primary, textColor } from '../../theme'
 import MobileDrawer from './MobileDrawer'
+import GlowingIcon from '../GlowingIcon'
+import { BsGithub, BsLinkedin } from 'react-icons/bs'
+import { SiFacebook } from 'react-icons/si'
 
 const Header = () => {
   const [page, setPage] = useState<string>('')
@@ -30,11 +28,9 @@ const Header = () => {
 
   return (
     <Flex
-      bgColor="rgba(155, 167, 214, 0.4)"
       p={5}
       justifyContent={{ base: 'flex-end', md: 'center' }}
       w="100%"
-      position="sticky"
       top={0}
       zIndex="10"
     >
@@ -53,16 +49,11 @@ const Header = () => {
               text="Home"
               style={{
                 fontSize: page === 'HomeSection' ? '28px' : '24px',
-                color:
-                  page === 'HomeSection' ? primaryColor : secondaryDarkColor,
+                color: page === 'HomeSection' ? primary : textColor,
               }}
             />
             {page === 'HomeSection' && (
-              <Circle
-                justifyContent="center"
-                size="8px"
-                bg={primaryColor}
-              ></Circle>
+              <Circle justifyContent="center" size="8px" bg={primary}></Circle>
             )}
           </Flex>
         </a>
@@ -73,16 +64,11 @@ const Header = () => {
               text="About"
               style={{
                 fontSize: page === 'AboutSection' ? '28px' : '24px',
-                color:
-                  page === 'AboutSection' ? primaryColor : secondaryDarkColor,
+                color: page === 'AboutSection' ? primary : textColor,
               }}
             />
             {page === 'AboutSection' && (
-              <Circle
-                justifyContent="center"
-                size="8px"
-                bg={primaryColor}
-              ></Circle>
+              <Circle justifyContent="center" size="8px" bg={primary}></Circle>
             )}
           </Flex>
         </a>
@@ -94,18 +80,11 @@ const Header = () => {
               text="Projects"
               style={{
                 fontSize: page === 'ProjectsSection' ? '28px' : '24px',
-                color:
-                  page === 'ProjectsSection'
-                    ? primaryColor
-                    : secondaryDarkColor,
+                color: page === 'ProjectsSection' ? primary : textColor,
               }}
             />
             {page === 'ProjectsSection' && (
-              <Circle
-                justifyContent="center"
-                size="8px"
-                bg={primaryColor}
-              ></Circle>
+              <Circle justifyContent="center" size="8px" bg={primary}></Circle>
             )}
           </Flex>
         </a>
@@ -116,16 +95,11 @@ const Header = () => {
               text="Contact me"
               style={{
                 fontSize: page === 'ContactSection' ? '28px' : '24px',
-                color:
-                  page === 'ContactSection' ? primaryColor : secondaryDarkColor,
+                color: page === 'ContactSection' ? primary : textColor,
               }}
             />
             {page === 'ContactSection' && (
-              <Circle
-                justifyContent="center"
-                size="8px"
-                bg={primaryColor}
-              ></Circle>
+              <Circle justifyContent="center" size="8px" bg={primary}></Circle>
             )}
           </Flex>
         </a>

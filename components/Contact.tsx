@@ -2,7 +2,7 @@ import { Flex, HStack, VStack } from '@chakra-ui/react'
 import React from 'react'
 import { BsLinkedin, BsTelegram } from 'react-icons/bs'
 import { ImMail4 } from 'react-icons/im'
-import { primaryColor } from '../theme'
+import { primary } from '../theme'
 import ContactForm from './ContactForm'
 import GlowingIcon from './GlowingIcon'
 import ThemeText from './Typography/ThemeText'
@@ -31,7 +31,7 @@ const Contact = () => {
         flexDir="column"
       >
         <Flex flexDir="column" m={5}>
-          <ThemeText type="h2" text="" style={{ color: primaryColor }} />
+          <ThemeText type="h2" text="" style={{ color: primary }} />
 
           <ThemeText type="h1" text="Contact me" />
         </Flex>
@@ -85,7 +85,7 @@ const Contact = () => {
             justifyContent="space-evenly"
           ></VStack>
         </Flex>
-        <Flex w="60%">
+        <Flex m={5} w="60%">
           <ContactForm />
         </Flex>
       </Flex>
